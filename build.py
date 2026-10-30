@@ -54,10 +54,10 @@ def title(name,handle,niche,where=''):
 # wins
 AMT={'Blue & Kim':'$38K in 3 months','Caelah Stanley':'$42K cash collected in a month · $0 → $150K in 2 months','Lachie Campbell':'$100K month in personal profit · $87.4K cash / $128.4K revenue in 30 days',
  'Shaun Alisa':'$27.5K from coaching in 6 weeks · ~$60K cash in 60 days · $10K AUD closed in 7 days · $16K revenue in a day (~$8K cash)','Éabha O\'Mahony':'$22K total revenue','Kobe Rugless':'$4,500 in 8 days',
- 'Brady Hughes':'$10.5K MRR · new $3K AUD/mo retainer · $3K AUD day','James Russell':'$14K in 4 months full-time on content · $3K PIF · $6,320 earnings','Julian Zand':'$7.5K in PIFs',
+ 'Brady Hughes':'$10.5K MRR · new $3K AUD/mo retainer · $3K AUD day','James Russell':'“$2k away from a $50k month” (his words, 21 Oct 2026) · $5k cash collected PIF by 9am on a Wednesday · 23 hot leads · $14k+ revenue in Aug · 16K followers · 5 brand collabs · $14K in 4 months full-time on content','Julian Zand':'$7.5K in PIFs',
  'Jylise':'$1,200 first sale','Kenya Werenett':'$2,700 first client','Mason':'2 × $3K PIFs','Owen Ditzel':'$3K PIF','Pavle':'3 PIFs in one day (setter)',
  'Rhian':'$4K+ high-ticket client','Riley Liston':'$1,500 first client'}
-PRE={'Lachie Campbell':['lachie-campbell-100k.jpg'],'Caelah Stanley':['caelah-stanley-150k.jpg'],'Shaun Alisa':['shaun-alisa-27k.jpg','shaun-alisa-10kaud.jpg','shaun-alisa-7.jpg'],'Brady Hughes':['brady-hughes-2.jpg','brady-hughes-3.jpg'],'Julian Zand':['julian-zand-3.jpg']}
+PRE={'James Russell':['james-russell-50k.jpg','james-russell-aug.jpg'],'Lachie Campbell':['lachie-campbell-100k.jpg'],'Caelah Stanley':['caelah-stanley-150k.jpg'],'Shaun Alisa':['shaun-alisa-27k.jpg','shaun-alisa-10kaud.jpg','shaun-alisa-7.jpg'],'Brady Hughes':['brady-hughes-2.jpg','brady-hughes-3.jpg'],'Julian Zand':['julian-zand-3.jpg']}
 BAN={'Duncan Coombs'}
 POST={'James Russell':['james-russell-2.jpg']}
 cards=[]
