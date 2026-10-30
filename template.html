@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Done4U Results</title>
+<meta name="description" content="Real client results from Done4U: financial wins, follower growth and video testimonials.">
+<meta property="og:title" content="Done4U Results"><meta property="og:image" content="img/hero.jpg">
+<style>
+:root{--bg:#07070a;--card:#101015;--line:#22222b;--tx:#f4f4f6;--mu:#9a9aa6;--ac:#c8ff3d;--gap:24px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.hero{position:relative;text-align:center;padding:56px 0 40px;background:radial-gradient(900px 400px at 50% 0,#1b2208 0,transparent 70%)}
+.eyebrow{letter-spacing:.2em;font-size:12px;color:var(--ac);text-transform:uppercase;font-weight:700}
+h1{font-size:clamp(40px,7vw,84px);line-height:1;margin:12px 0 10px;letter-spacing:-.03em}
+.sub{color:var(--mu);max-width:640px;margin:0 auto 28px;font-size:18px}
+.heroimg{display:block;width:100%;max-width:1100px;margin:0 auto 28px;border-radius:20px;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.btn{display:inline-block;background:var(--ac);color:#0b0d02;font-weight:800;padding:16px 30px;border-radius:999px;text-decoration:none;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(200,255,61,.25)}
+.statbar{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;max-width:1000px;margin:34px auto 0}.statbar .s{border:1px solid var(--line);background:var(--card);border-radius:16px;padding:18px 12px}.statbar .s b{display:block;font-size:clamp(28px,4vw,40px);line-height:1.1;color:var(--ac);letter-spacing:-.02em}.statbar .s span{color:var(--mu);font-size:14px}
+.stats{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:26px 0 0}
+.stats span{border:1px solid var(--line);background:var(--card);padding:8px 16px;border-radius:999px;color:var(--mu);font-size:14px}
+.stats b{color:var(--tx)}
+nav.tabs{position:sticky;top:0;z-index:20;background:rgba(7,7,10,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav.tabs .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:10px;padding-bottom:10px;justify-content:center}
+nav.tabs a{white-space:nowrap;text-decoration:none;color:var(--mu);padding:8px 16px;border-radius:999px;font-size:14px;font-weight:600}
+nav.tabs a:hover{color:var(--tx);background:var(--card)}
+section{padding:72px 0 8px;scroll-margin-top:48px}
+.sh{margin-bottom:30px}.sh h2{font-size:clamp(28px,4vw,44px);margin:0 0 6px;letter-spacing:-.02em}.sh p{margin:0;color:var(--mu)}
+.sh h2:before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--ac);margin-right:14px;vertical-align:middle}
+.grid{display:grid;gap:var(--gap);grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.grid.wins{grid-template-columns:repeat(2,minmax(0,1fr))}
+.flexc{display:flex;flex-wrap:wrap;justify-content:center}.flexc>*{flex:0 0 calc((100% - 2*var(--gap))/3);min-width:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:12px}
+.card h3{margin:0;font-size:19px;line-height:1.25}.card .h{color:var(--ac);font-weight:600;font-size:15px;word-break:break-all}
+.niche{margin:-6px 0 0;color:var(--mu);font-size:14px}
+.amt{margin:6px 0 0;color:var(--ac);font-weight:800;font-size:17px;letter-spacing:-.01em}
+.frame{background:#000;border-radius:12px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;flex:1;min-height:260px}
+.frame img{max-width:100%;width:100%;max-height:760px;height:auto;object-fit:contain;cursor:zoom-in;display:block}
+.win .frame{flex:none;min-height:0}.grid.wins.flexc{display:block;column-count:2;column-gap:var(--gap)}.grid.wins.flexc>.win{break-inside:avoid;margin:0 0 var(--gap);width:100%;box-sizing:border-box}.frame.ig{background:#fff;flex:none;min-height:0}.frame.hdr{background:#0b0c10;flex:none;min-height:0;aspect-ratio:2.3/1}.frame.hdr img{max-height:100%;height:100%}.fol .frame{margin-top:auto}
+.frame.stat{flex-direction:column;background:linear-gradient(160deg,#151a05,#0b0b0f);text-align:center}
+.stat .big{font-size:56px;font-weight:800;color:var(--ac);letter-spacing:-.03em}.stat .lbl{color:var(--tx);font-weight:600}.stat .sub{color:var(--mu);font-size:14px;margin:6px 0 0}
+.slides{width:100%}.slide{display:none;margin:0;width:100%;align-items:center;justify-content:center}.slide.on{display:flex}
+.nav{display:flex;align-items:center;justify-content:center;gap:14px}.nav button{background:#1b1b24;border:1px solid var(--line);color:var(--tx);width:38px;height:38px;border-radius:50%;font-size:22px;cursor:pointer}.nav button:hover{background:var(--ac);color:#000}.count{color:var(--mu);font-size:14px;min-width:48px;text-align:center}
+.win.single .nav{display:none}
+.vframe{all:unset;display:block;position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;cursor:pointer;background:#000;border:1px solid var(--line);margin-top:auto}
+.vframe img,.vframe iframe{width:100%;height:100%;object-fit:cover;border:0;display:block}
+.play{position:absolute;inset:0;margin:auto;width:68px;height:68px;border-radius:50%;background:rgba(200,255,61,.95)}
+.play:after{content:"";position:absolute;left:27px;top:20px;border-left:20px solid #000;border-top:14px solid transparent;border-bottom:14px solid transparent}
+.vt{margin:0;font-size:14px;color:var(--tx)}.by{margin:0;font-size:13px;color:var(--mu)}.by a{color:var(--ac)}
+.coach{display:flex;flex-direction:column;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px 20px;text-align:center;transition:transform .15s,border-color .15s}
+.fcs{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin:6px 0 4px}.fc{text-align:center}.fc b{display:block;font-size:34px;line-height:1.1;color:var(--ac);letter-spacing:-.02em}.fc span{display:block;font-size:13px;color:var(--mu)}.fc span a{color:var(--mu);text-decoration:none}.fc span a:hover{color:var(--ac)}
+.cshots{margin-top:14px;display:flex;flex-direction:column;gap:10px}.cshots img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--line);background:#0b0c10;cursor:zoom-in}
+.av{width:132px;height:132px;border-radius:50%;margin:0 auto 16px;overflow:hidden;border:3px solid var(--ac);background:#1b1b24;display:flex;align-items:center;justify-content:center}
+.av img{width:100%;height:100%;object-fit:cover}.init{font-size:44px;font-weight:800;color:var(--ac)}
+.coach h3{margin:0;font-size:20px}.role{margin:4px 0 8px;color:var(--tx);font-size:14px}.hd{margin:0;color:var(--ac);font-size:14px;font-weight:600}
+.cta{margin:96px 0 0;padding:72px 24px;text-align:center;border-top:1px solid var(--line);background:radial-gradient(700px 300px at 50% 100%,#1b2208,transparent 70%)}
+.cta h2{font-size:clamp(30px,5vw,56px);margin:0 0 12px;letter-spacing:-.02em}.cta p{color:var(--mu);margin:0 0 28px}
+footer{color:var(--mu);text-align:center;font-size:13px;padding:24px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:50;cursor:zoom-out;padding:20px}
+#lb.on{display:flex}#lb img{max-width:100%;max-height:100%;object-fit:contain}
+
+@media(max-width:1000px){.grid,.grid.wins{grid-template-columns:repeat(2,minmax(0,1fr))}.flexc>*{flex-basis:calc((100% - var(--gap))/2)}}
+@media(max-width:700px){.grid.wins.flexc{column-count:1}:root{--gap:18px}.grid,.grid.wins{grid-template-columns:1fr}.flexc>*{flex-basis:100%}.hero{padding-top:36px}.wrap{padding:0 16px}}
+</style></head><body>
+<header class="hero"><div class="wrap">
+<div class="eyebrow">Done4U</div>
+<h1>Done4U Results</h1>
+<p class="sub">Real clients. Real numbers. Every result below is a screenshot, a profile or a video from the people we've worked with.</p>
+<img class="heroimg" src="img/hero.jpg" alt="The Done4U team and clients on a cliff by the sea">
+<a class="btn" href="{{CAL}}" target="_blank" rel="noopener">Book a strategy call</a>
+<div class="statbar">{{STATS}}</div>
+</div></header>
+<nav class="tabs"><div class="wrap"><a href="#coaches">Coaches</a><a href="#financial-wins">Financial Wins</a><a href="#follower-growth">Follower Growth</a><a href="#youtube">YouTube Testimonials</a><a href="#book">Book a call</a></div></nav>
+<main class="wrap">
+<section id="coaches"><div class="sh"><h2>Meet the Done4U Coaches</h2><p>The team behind every result on this page.</p></div><div class="grid flexc">{{COACHES}}</div></section>
+<section id="financial-wins"><div class="sh"><h2>Financial Wins</h2><p>Revenue and income screenshots, shown in full.</p></div><div class="grid wins flexc">{{FIN}}</div></section>
+<section id="follower-growth"><div class="sh"><h2>Follower Growth</h2><p>Instagram profiles of Done4U clients, shown in full with their follower counts.</p></div><div class="grid flexc">{{FOL}}</div></section>
+<section id="youtube"><div class="sh"><h2>YouTube Testimonials</h2><p>Hear it from the clients themselves.</p></div><div class="grid">{{YT}}</div></section>
+</main>
+<section id="book" class="cta"><h2>Ready to be next?</h2><p>Book a free strategy call and we'll map out your next 90 days.</p><a class="btn" href="{{CAL}}" target="_blank" rel="noopener">Book a strategy call</a></section>
+<footer>© Done4U · Results shown are from individual clients and are not a guarantee of future results.</footer>
+<div id="lb"><img alt=""></div>
+<script>
+document.querySelectorAll('.win').forEach(c=>{const s=[...c.querySelectorAll('.slide')];let i=0;const show=n=>{i=(n+s.length)%s.length;s.forEach((x,k)=>x.classList.toggle('on',k===i));const ct=c.querySelector('.count');if(ct)ct.textContent=(i+1)+' / '+s.length};show(0);if(s.length<2)c.classList.add('single');c.querySelector('.prev')?.addEventListener('click',()=>show(i-1));c.querySelector('.next')?.addEventListener('click',()=>show(i+1))});
+document.querySelectorAll('.vframe').forEach(b=>b.addEventListener('click',()=>{const f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.yt+'?autoplay=1&rel=0';f.allow='autoplay;encrypted-media;picture-in-picture;fullscreen';f.allowFullscreen=true;b.replaceChildren(f)},{once:true}));
+const lb=document.getElementById('lb');document.addEventListener('click',e=>{const t=e.target.closest('[data-full]');if(t){lb.querySelector('img').src=t.dataset.full;lb.classList.add('on')}else if(lb.classList.contains('on'))lb.classList.remove('on')});
+</script></body></html>
