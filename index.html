@@ -29,7 +29,7 @@ section{padding:72px 0 8px;scroll-margin-top:48px}
 .sh h2:before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--ac);margin-right:14px;vertical-align:middle}
 .grid{display:grid;gap:var(--gap);grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
 .grid.wins{grid-template-columns:repeat(2,minmax(0,1fr))}
-.coaches{grid-template-columns:repeat(4,minmax(0,1fr))}
+.coaches{display:flex;flex-wrap:wrap;justify-content:center}.coaches>.coach{flex:0 0 calc((100% - 2*var(--gap))/3)}
 .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:12px}
 .card h3{margin:0;font-size:19px;line-height:1.25}.card .h{color:var(--ac);font-weight:600;font-size:15px;word-break:break-all}
 .niche{margin:-6px 0 0;color:var(--mu);font-size:14px}
@@ -56,8 +56,8 @@ section{padding:72px 0 8px;scroll-margin-top:48px}
 footer{color:var(--mu);text-align:center;font-size:13px;padding:24px}
 #lb{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:50;cursor:zoom-out;padding:20px}
 #lb.on{display:flex}#lb img{max-width:100%;max-height:100%;object-fit:contain}
-@media(max-width:1000px){.grid,.grid.wins{grid-template-columns:repeat(2,minmax(0,1fr))}.coaches{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:700px){:root{--gap:18px}.grid,.grid.wins,.coaches{grid-template-columns:1fr}.hero{padding-top:36px}.wrap{padding:0 16px}}
+@media(max-width:1000px){.grid,.grid.wins{grid-template-columns:repeat(2,minmax(0,1fr))}.coaches>.coach{flex-basis:calc((100% - var(--gap))/2)}}
+@media(max-width:700px){:root{--gap:18px}.grid,.grid.wins{grid-template-columns:1fr}.coaches>.coach{flex-basis:100%}.hero{padding-top:36px}.wrap{padding:0 16px}}
 </style></head><body>
 <header class="hero"><div class="wrap">
 <div class="eyebrow">Done4U</div>
@@ -71,8 +71,9 @@ footer{color:var(--mu);text-align:center;font-size:13px;padding:24px}
 <main class="wrap">
 <section id="coaches"><div class="sh"><h2>Meet the Done4U Coaches</h2><p>The team behind every result on this page.</p></div><div class="grid coaches"><a class="coach" href="https://www.instagram.com/iamjakepeterz/" target="_blank" rel="noopener"><div class="av"><img src="img/coaches/jake.jpg" alt="Jake Peters"></div><h3>Jake Peters</h3><p class="role">Co-founder · Sales &amp; Strategy</p><p class="hd">@iamjakepeterz</p></a>
 <a class="coach" href="https://www.youtube.com/@ReidBranded" target="_blank" rel="noopener"><div class="av"><img src="img/coaches/reid.jpg" alt="Reid Seddon"></div><h3>Reid Seddon</h3><p class="role">Co-founder · Content Coach</p><p class="hd">@ReidBranded</p></a>
-<a class="coach" href="https://www.instagram.com/tearaibryers/" target="_blank" rel="noopener"><div class="av"><span class="init">TB</span></div><h3>TeAri Bryers</h3><p class="role">Content Coach · Client Success</p><p class="hd">@tearaibryers</p></a>
+<a class="coach" href="https://www.instagram.com/tearaibryers/" target="_blank" rel="noopener"><div class="av"><img src="img/coaches/teari.jpg" alt="TeAri Bryers"></div><h3>TeAri Bryers</h3><p class="role">Content Coach · Client Success</p><p class="hd">@tearaibryers</p></a>
 <a class="coach" href="https://www.instagram.com/eabhaom/" target="_blank" rel="noopener"><div class="av"><img src="img/coaches/eabha.jpg" alt="Éabha O&#x27;Mahony"></div><h3>Éabha O&#x27;Mahony</h3><p class="role">Content Coach</p><p class="hd">@eabhaom</p></a>
+<div class="coach"><div class="av"><img src="img/coaches/tessa.jpg" alt="Tessa"></div><h3>Tessa</h3><p class="role">Client Success Manager (CSM)</p></div>
 </div></section>
 <section id="financial-wins"><div class="sh"><h2>Financial Wins</h2><p>Revenue and income screenshots, shown in full.</p></div><div class="grid wins"><article class="card win" data-n="1"><h3>Blue &amp; Kim <span class="h">@blueandkim</span></h3><div class="frame"><div class="slides"><figure class="slide"><img loading="lazy" src="img/wins/blue-kim-1.jpg" alt="Blue &amp; Kim result screenshot 1" data-full="img/wins/blue-kim-1.jpg"></figure></div></div></article>
 <article class="card win" data-n="1"><h3>Caelah Stanley <span class="h">@caelahstanley</span></h3><p class="niche">Tech-sales coaching</p><div class="frame"><div class="slides"><figure class="slide"><img loading="lazy" src="img/wins/caelah-stanley-1.jpg" alt="Caelah Stanley result screenshot 1" data-full="img/wins/caelah-stanley-1.jpg"></figure></div></div></article>
