@@ -46,6 +46,28 @@ def meta(handle,f):
     m=f'<span class="hn">@{esc(handle)}</span>'
     if f: m+=f'<span class="pill">{fmtf(f)} followers</span>'
     return f'<div class="meta">{m}</div>'
+# Before/After (Client Wins Master Doc, Drive; period as stated there). kind, before, after, period
+BA={
+ 'eabhaom':[('Followers','30K','110K','in 2 months')],
+ 'tearaibryers':[('Followers','11K','18K','in 2 months')],
+ 'itsmarcofontana':[('Followers','1,872','31.9K','in 2 months')],
+ 'claybarrett.official':[('Followers','0','16K','in 1 month')],
+ 'colby_offutt':[('Followers','1','75K','in 2 months')],
+ 'koberugless':[('Followers','6K','32K','in 3 months')],
+ 'jaredto100':[('Followers','Under 3K','~10K','in 28 days')],
+ 'caelahstanley':[('Followers','3,151','15.1K','')],
+ 'blueandkim':[('Monthly revenue','€2K','€16K','in 60 days')],
+ 'benxmills':[('Followers','87K','245K','~160K of it in 3 weeks')],
+ 'surfing_with_grant':[('Revenue','~$1K/month','$21.5K in sales','in ~2 months')],
+ 'Mason':[('Followers','2K','13K','in under 3 months')],
+ '20-year-old fitness coach':[('Monthly revenue','$0','$21K','in 8 weeks')],
+}
+def bablock(rows):
+    o=''
+    for k,bf,af,per in rows:
+        p=f'<span class="per">{esc(per)}</span>' if per else ''
+        o+=f'<div class="ba"><div class="bk"><span>{esc(k)}</span>{p}</div><div class="bv"><span class="bf"><i>Before</i><b>{esc(bf)}</b></span><span class="ar" aria-hidden="true">→</span><span class="af"><i>After</i><b>{esc(af)}</b></span></div></div>'
+    return o
 def title(name,handle,niche,where=''):
     if handle in CANON: niche=CANON[handle]
     t=f'<div class="ch"><h3>{esc(name)}</h3>'
@@ -55,6 +77,8 @@ def title(name,handle,niche,where=''):
         t+=meta(handle,f)
     else: MISSING.append((where,name,'(no handle)'))
     if niche: t+=f'<p class="niche">{esc(niche)}</p>'
+    rows=BA.get(handle) or BA.get(name)
+    if rows: t+=bablock(rows)
     return t+'</div>'
 # wins
 AMT={'Blue & Kim':'$38K in 3 months','Caelah Stanley':'$42K cash collected in a month · $0 → $150K in 2 months','Lachie Campbell':'$100K month in personal profit · $87.4K cash / $128.4K revenue in 30 days',
