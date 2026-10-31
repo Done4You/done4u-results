@@ -32,8 +32,12 @@ section{padding:72px 0 8px;scroll-margin-top:48px}
 .grid.wins{grid-template-columns:repeat(2,minmax(0,1fr))}
 .flexc{display:flex;flex-wrap:wrap;justify-content:center}.flexc>*{flex:0 0 calc((100% - 2*var(--gap))/3);min-width:0}
 .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:12px}
-.card h3{margin:0;font-size:19px;line-height:1.25}.card .h{color:var(--ac);font-weight:600;font-size:15px;word-break:break-all}
-.niche{margin:-6px 0 0;color:var(--mu);font-size:14px}
+.ch{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.card h3{margin:0;font-size:20px;line-height:1.25;overflow-wrap:normal;word-break:normal}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;max-width:100%}
+.hn{color:var(--mu);font-size:14px;font-weight:500;line-height:1.3}
+.pill{display:inline-block;white-space:nowrap;font-size:12px;font-weight:700;line-height:1;color:var(--ac);border:1px solid rgba(200,255,61,.35);background:rgba(200,255,61,.08);padding:5px 10px;border-radius:999px}
+.niche{margin:0;color:var(--mu);font-size:14px}
 .amt{margin:6px 0 0;color:var(--ac);font-weight:800;font-size:17px;letter-spacing:-.01em}
 .frame{background:#000;border-radius:12px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;flex:1;min-height:260px}
 .frame img{max-width:100%;width:100%;max-height:760px;height:auto;object-fit:contain;cursor:zoom-in;display:block}
@@ -54,7 +58,7 @@ section{padding:72px 0 8px;scroll-margin-top:48px}
 .cshots{margin-top:14px;display:flex;flex-direction:column;gap:10px}.cshots img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--line);background:#0b0c10;cursor:zoom-in}
 .av{width:132px;height:132px;border-radius:50%;margin:0 auto 16px;overflow:hidden;border:3px solid var(--ac);background:#1b1b24;display:flex;align-items:center;justify-content:center}
 .av img{width:100%;height:100%;object-fit:cover}.init{font-size:44px;font-weight:800;color:var(--ac)}
-.coach h3{margin:0;font-size:20px}.role{margin:4px 0 8px;color:var(--tx);font-size:14px}.hd{margin:0;color:var(--ac);font-size:14px;font-weight:600}
+.coach h3{margin:0;font-size:20px}.coach .meta{justify-content:center;margin:6px 0 2px}.role{margin:4px 0 8px;color:var(--tx);font-size:14px}.hd{margin:0;color:var(--ac);font-size:14px;font-weight:600}
 .cta{margin:96px 0 0;padding:72px 24px;text-align:center;border-top:1px solid var(--line);background:radial-gradient(700px 300px at 50% 100%,#1b2208,transparent 70%)}
 .cta h2{font-size:clamp(30px,5vw,56px);margin:0 0 12px;letter-spacing:-.02em}.cta p{color:var(--mu);margin:0 0 28px}
 footer{color:var(--mu);text-align:center;font-size:13px;padding:24px}
@@ -71,6 +75,19 @@ footer{color:var(--mu);text-align:center;font-size:13px;padding:24px}
 
 @media(max-width:1000px){.grid,.grid.wins{grid-template-columns:repeat(2,minmax(0,1fr))}.flexc>*{flex-basis:calc((100% - var(--gap))/2)}}
 @media(max-width:700px){.grid.wins.flexc{column-count:1}:root{--gap:18px}.grid,.grid.wins{grid-template-columns:1fr}.flexc>*{flex-basis:100%}.hero{padding-top:36px}.wrap{padding:0 16px}}
+nav.tabs a{display:inline-flex;align-items:center;min-height:44px}
+nav.tabs .wrap{justify-content:flex-start;-webkit-overflow-scrolling:touch;scrollbar-width:none}nav.tabs .wrap::-webkit-scrollbar{display:none}
+nav.tabs .wrap>a:first-child{margin-left:auto}nav.tabs .wrap>a:last-child{margin-right:auto}
+.fc span a{display:inline-block;padding:6px 0}
+@media(max-width:700px){
+section{padding-top:48px}.vsl{padding-top:28px}.sh{margin-bottom:20px}.sh h2{font-size:clamp(24px,7vw,30px);line-height:1.2}.sh h2:before{width:8px;height:8px;margin-right:10px}
+.sub{font-size:16px;margin-bottom:22px}.heroimg{border-radius:14px;margin-bottom:22px}
+.card{padding:16px;border-radius:16px}.card h3{font-size:19px}.amt{font-size:16px}
+.nav button{width:44px;height:44px}.btn{padding:16px 28px}
+.cta{margin-top:64px;padding:56px 20px}.vslbox,.mid .vslbox{box-shadow:0 14px 40px rgba(0,0,0,.5)}.embed{border-radius:12px}
+nav.tabs .wrap{padding-top:6px;padding-bottom:6px}
+}
+.by a{display:inline-block;padding:10px 0}
 </style></head><body>
 <header class="hero"><div class="wrap">
 <div class="eyebrow">Done4U</div>

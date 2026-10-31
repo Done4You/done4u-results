@@ -41,16 +41,19 @@ def fmtf(n):
     if n<10000: return f'{n:,}'
     return f'{n/1000:.1f}'.rstrip('0').rstrip('.')+'K'
 MISSING=[]
+def meta(handle,f):
+    m=f'<span class="hn">@{esc(handle)}</span>'
+    if f: m+=f'<span class="pill">{fmtf(f)} followers</span>'
+    return f'<div class="meta">{m}</div>'
 def title(name,handle,niche,where=''):
-    t=f'<h3>{esc(name)}'
+    t=f'<div class="ch"><h3>{esc(name)}</h3>'
     if handle:
         f=FC.get(handle)
         if f is None: MISSING.append((where,name,handle))
-        t+=f' <span class="h">@{esc(handle)}'+(f' · {fmtf(f)} followers' if f else '')+'</span>'
+        t+=meta(handle,f)
     else: MISSING.append((where,name,'(no handle)'))
-    t+='</h3>'
     if niche: t+=f'<p class="niche">{esc(niche)}</p>'
-    return t
+    return t+'</div>'
 # wins
 AMT={'Blue & Kim':'$38K in 3 months','Caelah Stanley':'$42K cash collected in a month · $0 → $150K in 2 months','Lachie Campbell':'$100K month in personal profit · $87.4K cash / $128.4K revenue in 30 days',
  'Shaun Alisa':'$27.5K from coaching in 6 weeks · ~$60K cash in 60 days · $10K AUD closed in 7 days · $16K revenue in a day (~$8K cash)','Éabha O\'Mahony':'$22K total revenue','Kobe Rugless':'$4,500 in 8 days',
@@ -101,7 +104,7 @@ for name,h,f in order:
     cls='hdr' if h in NEWHDR else 'ig'
     assert os.path.exists(f'img/ig/{h}.jpg'),h
     body=f'<div class="frame {cls}"><img loading="lazy" src="img/ig/{h}.jpg" alt="{esc(name)} Instagram profile" data-full="img/ig/{h}.jpg"></div>'
-    if cls=='ig' and '</div><div' not in fol[-300:] and not split: fol+='</div><div class="grid flexc" style="margin-top:var(--gap)">'; split=True
+    if cls=='ig' and not split: fol+='</div><div class="grid flexc" style="margin-top:var(--gap)">'; split=True
     fol+=f'<article class="card fol">{title(name,h,NICHE.get(h),'fol')}{body}</article>\n'
 # youtube
 YT=[
@@ -136,8 +139,8 @@ for n,r,ph,accs in CO:
     fcs=f'<div class="fcs">{fcs}</div>' if accs else ''
     shots=''.join(f'<img loading="lazy" src="img/coaches/ig-{h}.jpg" alt="@{h} Instagram profile, {c} followers" data-full="img/coaches/ig-{h}.jpg">' for h,c in accs)
     shots=f'<div class="cshots">{shots}</div>' if accs else ''
-    ch=(f' <span class="h">@{accs[0][0]} · {accs[0][1]} followers</span>' if accs else '')
-    co+=f'<div class="coach"><div class="av">{av}</div><h3>{esc(n)}{ch}</h3><p class="role">{r}</p>{fcs}{shots}</div>\n'
+    ch=(f'<div class="meta"><span class="hn">@{accs[0][0]}</span><span class="pill">{accs[0][1]} followers</span></div>' if accs else '')
+    co+=f'<div class="coach"><div class="av">{av}</div><h3>{esc(n)}</h3>{ch}<p class="role">{r}</p>{fcs}{shots}</div>\n'
 QAV=[('“I’m not an expert yet”', 'You don’t need authority — you need relatability. This explains why documenting beats teaching.', '1zPUU--7N8g'), ('“I’m worried what people will think”', 'Everyone goes through this stage. This breaks down why it doesn’t matter as much as you think.', '0u7XB9SDvg0'), ('“I don’t have time”', 'Content doesn’t need to take over your life. We build systems that take under 30 minutes a day.', '5IsW5jRT3rE'), ('“Why does a personal brand even matter?”', 'Attention is leverage. This shows how personal brands turn into real opportunities and income.', 'MVAVrWVgeUQ'), ('“What’s the cost to get started?”', 'A straight answer on the investment and what it gets you.', 't6_aX5NNYws')]
 qa=''.join(f'<article class="card qitem"><h3>{esc(q)}</h3><p>{esc(d)}</p><div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/{v}?rel=0" title="{esc(q)}" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></article>\n' for q,d,v in QAV)
 page=open('template.html').read()
