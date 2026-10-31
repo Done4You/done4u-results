@@ -9,7 +9,7 @@ NICHE={ # Jake's list (t1034u); lines marked (inferred) come from the screenshot
  'owenditzel':'Athlete','maisiesmunch':'Artist','soyjoseperezz':'Lifestyle creator','joshevans_training':'Fitness coach','rileylistonn':'Athlete',
  'kaitdevir':'Lifestyle creator / videographer','brodyriseborough':'Gym owner','masongothard':'Health coach','iamkenyamarie_':'Mindset coach',
  'elijahvane_':'Makeup artist','haleighhock':'Lifestyle creator','alexjbarbas':'Fitness coach','jake.racc':'Lifestyle creator',
- 'the.limitlesscoach':'Entrepreneur / health coach','charliebj':'Lifestyle creator','ioihei_':'Olympic athlete','crowncapital._':'Betting company',
+ 'the.limitlesscoach':'Entrepreneur / health coach','charliebj':'Lifestyle creator','ioihei_':'Olympic athlete',
  'fitwithmiarae':'Fitness coach','shaun_alisa':'Online coach','surfwithruben_':'Surf coach','koberugless':'Rugby player & coach',
  # earlier verified descriptors (Client Wins Master Doc)
  'itsmarcofontana':'Fitness coaching','claybarrett.official':'Fitness coaching','colby_offutt':'Fascia-release & bodywork education',
@@ -29,7 +29,7 @@ FOLL=[
  ('Kenya Werenett','iamkenyamarie_',20988),('James Russell','iam_jamesrussell',19600),('Elijah Avalos','elijahvane_',17199),('Alexandrina','socraticalexa',17000),
  ('Mason Gothard','masongothard',15800),('Jack Rigg','studywithjack_',15939),('Haleigh Hockenberry','haleighhock',14463),('Alex Barbas','alexjbarbas',14418),
  ('Jake Racciatti','jake.racc',13928),('Axel Bustad','axel.bustad',11700),('Mia Stewart','fitwithmiarae',11000),('Oli Andrijasevich','the.limitlesscoach',10863),
- ('Charlie Johnson','charliebj',10853),('Hilary Iong','ioihei_',10233),('Jamar Scarvelis','crowncapital._',10101),('Jared Justian','jaredto100',10000),
+ ('Charlie Johnson','charliebj',10853),('Hilary Iong','ioihei_',10233),('Jared Justian','jaredto100',10000),
  ('Daniel Smyth','danielsmyth_',9150),('Lachie Campbell','777lachy',4999)]
 NEWHDR={'kaitdevir','jaredto100','colby_offutt','blueandkim','surfing_with_grant','benxmills','surfwithruben_','claybarrett.official','claraalessandra_','777lachy','koberugless','iam_jamesrussell','maisiesmunch','rileylistonn','masongothard','owenditzel','stenmeulink','aidan.melograna','socraticalexa','axel.bustad','danielsmyth_','fitwithmiarae','shaun_alisa'}
 TOTAL_FOLLOWERS=sum(f for _,_,f in FOLL)
@@ -48,42 +48,46 @@ def meta(handle,f):
     return f'<div class="meta">{m}</div>'
 # Before/After (Client Wins Master Doc, Drive; period as stated there). kind, before, after, period
 BA={
- 'eabhaom':[('Followers','30K','110K','in 2 months')],
- 'tearaibryers':[('Followers','11K','18K','in 2 months')],
- 'itsmarcofontana':[('Followers','0','48K','')],
- 'claybarrett.official':[('Followers','0','66K','')],
- 'colby_offutt':[('Followers','0','120K','')],
- 'koberugless':[('Followers','6K','32K','in 3 months')],
- 'jaredto100':[('Followers','0','10K','')],
- 'caelahstanley':[('Followers','5K','39K','')],
- 'blueandkim':[('Monthly revenue','€2K','€16K','in 60 days')],
- 'benxmills':[('Followers','87K','245K','in 3 weeks')],
- 'surfing_with_grant':[('Revenue','~$1K/month','$21.5K in sales','in ~2 months')],
- 'Mason':[('Followers','2K','13K','in under 3 months')],
- '20-year-old fitness coach':[('Monthly revenue','$0','$21K','in 8 weeks')],
+ 'eabhaom':[('followers','30K','110K','in 2 months')],
+ 'tearaibryers':[('followers','11K','18K','in 2 months')],
+ 'itsmarcofontana':[('followers','0','48K','')],
+ 'claybarrett.official':[('followers','0','16K','in 1 month')],
+ 'colby_offutt':[('followers','0','120K','')],
+ 'koberugless':[('followers','6K','32K','in 3 months')],
+ 'jaredto100':[('followers','0','10K','')],
+ 'caelahstanley':[('followers','5K','39K','')],
+ 'blueandkim':[('monthly revenue','€2K','€16K','in 60 days')],
+ 'benxmills':[('followers','87K','245K','in 3 weeks')],
+ 'surfing_with_grant':[('','~$1K/month','$21.5K in sales','in ~2 months')],
+ 'Mason':[('followers','2K','13K','in under 3 months')],
+ '20-year-old fitness coach':[('monthly revenue','$0','$21K','in 8 weeks')],
  # Jake's own numbers (31 Oct 2026, no periods given)
- 'stenmeulink':[('Followers','20K','44K','')],
- 'surfwithruben_':[('Followers','22K','40.9K','')],
- 'shaun_alisa':[('Followers','12K','30K','')],
- 'owenditzel':[('Followers','8K','30K','')],
- 'kaitdevir':[('Followers','12K','24.8K','')],
- 'aidan.melograna':[('Followers','9K','20K','')],
- 'rileylistonn':[('Followers','10K','20K','')],
- 'iam_jamesrussell':[('Followers','0','19K','')],
- 'james.dylan.russell':[('Followers','0','19K','')],
- 'socraticalexa':[('Followers','0','17K','')],
- 'masongothard':[('Followers','2K','15.8K','')],
- 'fitwithmiarae':[('Followers','0','11K','')],
- 'axel.bustad':[('Followers','0','11.7K','')],
- '777lachy':[('Followers','0','5K','')],
- 'charliebj':[('Followers','0','11K','')],
- 'ioihei_':[('Followers','0','10K','')],
+ 'stenmeulink':[('followers','30K','50K','')],
+ 'surfwithruben_':[('followers','22K','40.9K','')],
+ 'shaun_alisa':[('followers','12K','35K','')],
+ 'owenditzel':[('followers','10K','33K','')],
+ 'kaitdevir':[('followers','10K','23K','')],
+ 'aidan.melograna':[('followers','10K','23K','')],
+ 'rileylistonn':[('followers','0','23K','')],
+ 'iam_jamesrussell':[('followers','2K','19.6K','')],
+ 'james.dylan.russell':[('followers','2K','19.6K','')],
+ 'socraticalexa':[('followers','0','17K','')],
+ 'masongothard':[('followers','0','15.8K','')],
+ 'fitwithmiarae':[('followers','0','11K','')],
+ 'axel.bustad':[('followers','0','11.7K','')],
+ '777lachy':[('followers','0','5K','')],
+ 'charliebj':[('followers','0','10.9K','')],
+ 'ioihei_':[('followers','0','10.2K','')],
+ 'danielsmyth_':[('followers','2K','9,150','')],
+ 'brodyriseborough':[('followers','10K','22.5K','')],
+ 'joshevans_training':[('followers','10K','26K','')],
 }
 def bablock(rows):
     o=''
-    for k,bf,af,per in rows:
+    for un,bf,af,per in rows:
         p=f'<span class="per">{esc(per)}</span>' if per else ''
-        o+=f'<div class="ba"><div class="bk"><span>{esc(k)}</span>{p}</div><div class="bv"><span class="bf"><i>Before</i><b>{esc(bf)}</b></span><span class="ar" aria-hidden="true">→</span><span class="af"><i>After</i><b>{esc(af)}</b></span></div></div>'
+        u=f'<span class="un">{esc(un)}</span>' if un else ''
+        o+=f'<div class="ba" aria-label="Done-for-you results: {esc(bf)} to {esc(af)} {esc(un)}"><div class="bk"><span>Done-for-you results:</span>{p}</div><div class="bv"><b class="bf">{esc(bf)}</b><span class="ar" aria-hidden="true">→</span><b class="af">{esc(af)}</b>{u}</div></div>'
     return o
 def title(name,handle,niche,where=''):
     if handle in CANON: niche=CANON[handle]
@@ -128,9 +132,8 @@ cards+=[
  ('Marco Fontana','itsmarcofontana','Fitness coach','€3,250 cash collected in a month',['marco-fontana-1.jpg']),
  ('Gabe Marzano','','Done4U client','$100K month in his 3rd month · $0 → $200K in the first quarter',['gabe-marzano-1.jpg','gabe-marzano-2.jpg']),
  ('Te Arai Bryers','tearaibryers','UGC creator & Head of UGC','$40K+ USD cash collected in his first 4 months',['te-arai-1.jpg']),
- ('Jamar Scarvelis','crowncapital._','Betting company','$0 → $400K AUD a month (self-reported)',['jamar-scarvelis-1.jpg']),
 ]
-SORTV={'Jamar Scarvelis':400000,'Gabe Marzano':200000,'Caelah Stanley':150000,'Lachie Campbell':128400,'Shaun Alisa':60000,'Te Arai Bryers':40000,'Blue & Kim':38000,'Éabha O\'Mahony':22000,'Grant Williams':21500,'Joe Price':18755,'Ruben Galjaard':15200,'James Russell':14000,'Brady Hughes':10500,'Julian Zand':7500,'Mason':6000,'Oliver Andrijasevich':5000,'Leon Frangenberg':5000,'Kobe Rugless':4500,'Rhian':4000,'Marco Fontana':3300,'Owen Ditzel':3000,'Pavle':3000,'Kenya Werenett':2700,'Sander':1800,'Riley Liston':1500,'Jared':1500,'Jylise':1200,'Aidan Melograna':1000}
+SORTV={'Gabe Marzano':200000,'Caelah Stanley':150000,'Lachie Campbell':128400,'Shaun Alisa':60000,'Te Arai Bryers':40000,'Blue & Kim':38000,'Éabha O\'Mahony':22000,'Grant Williams':21500,'Joe Price':18755,'Ruben Galjaard':15200,'James Russell':14000,'Brady Hughes':10500,'Julian Zand':7500,'Mason':6000,'Oliver Andrijasevich':5000,'Leon Frangenberg':5000,'Kobe Rugless':4500,'Rhian':4000,'Marco Fontana':3300,'Owen Ditzel':3000,'Pavle':3000,'Kenya Werenett':2700,'Sander':1800,'Riley Liston':1500,'Jared':1500,'Jylise':1200,'Aidan Melograna':1000}
 cards.sort(key=lambda c:-SORTV.get(c[0],0))
 fin=''
 for name,h,niche,amt,imgs in cards:
