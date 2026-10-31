@@ -138,8 +138,10 @@ for n,r,ph,accs in CO:
     shots=f'<div class="cshots">{shots}</div>' if accs else ''
     ch=(f' <span class="h">@{accs[0][0]} · {accs[0][1]} followers</span>' if accs else '')
     co+=f'<div class="coach"><div class="av">{av}</div><h3>{esc(n)}{ch}</h3><p class="role">{r}</p>{fcs}{shots}</div>\n'
+QAV=[('“I’m not an expert yet”', 'You don’t need authority — you need relatability. This explains why documenting beats teaching.', '1zPUU--7N8g'), ('“I’m worried what people will think”', 'Everyone goes through this stage. This breaks down why it doesn’t matter as much as you think.', '0u7XB9SDvg0'), ('“I don’t have time”', 'Content doesn’t need to take over your life. We build systems that take under 30 minutes a day.', '5IsW5jRT3rE'), ('“Why does a personal brand even matter?”', 'Attention is leverage. This shows how personal brands turn into real opportunities and income.', 'MVAVrWVgeUQ'), ('“What’s the cost to get started?”', 'A straight answer on the investment and what it gets you.', 't6_aX5NNYws')]
+qa=''.join(f'<article class="card qitem"><h3>{esc(q)}</h3><p>{esc(d)}</p><div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/{v}?rel=0" title="{esc(q)}" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></article>\n' for q,d,v in QAV)
 page=open('template.html').read()
-for k,v in dict(CVID=cvid,COACHES=co,FIN=fin,FOL=fol,YT=yt,CAL=CAL,NFIN=str(NFIN),NFOL=str(len(FOLL)),NYT=str(len(YT))).items():
+for k,v in dict(CVID=cvid,COACHES=co,FIN=fin,FOL=fol,YT=yt,CAL=CAL,QA=qa,NFIN=str(NFIN),NFOL=str(len(FOLL)),NYT=str(len(YT))).items():
     page=page.replace('{{'+k+'}}',v)
 open('index.html','w').write(page)
 print(len(fin),len(FOLL),len(yt),TOTAL_FOLLOWERS);print('MISSING',MISSING)
