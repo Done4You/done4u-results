@@ -17,7 +17,7 @@ NICHE={ # Jake's list (t1034u); lines marked (inferred) come from the screenshot
  'itsbradyhughes':'Agency','james.dylan.russell':'UGC creator','iam_jamesrussell':'UGC creator','benxmills':'Lifestyle creator','studywithjack_':'Study creator',
  'antoinemarneffe':'Online transformation coach','eabhaom':'Coaching','tearaibryers':'Fitness coaching',
  # placeholders - waiting on Jake
- 'stenmeulink':'Creator','aidan.melograna':'Student coach','socraticalexa':'Creator','axel.bustad':'Creator','danielsmyth_':'Creator','claraalessandra_':'Creator','777lachy':'High-ticket sales'}
+ 'stenmeulink':'Performance coach & model','aidan.melograna':'Student coach','axel.bustad':'Fitness & mindset creator','danielsmyth_':'High-ticket sales coach','claraalessandra_':'Helps women monetize content creation','777lachy':'High-ticket sales'}
 # Follower profiles: (name, handle, followers shown in the screenshot). Coach accounts are NOT in this list.
 FOLL=[
  ('Ben Mills','benxmills',245000),('Colby Offutt','colby_offutt',158000),('Clara Alessandra','claraalessandra_',91600),('Antoine Marneffe','antoinemarneffe',92613),
@@ -41,11 +41,13 @@ def fmtf(n):
     if n<10000: return f'{n:,}'
     return f'{n/1000:.1f}'.rstrip('0').rstrip('.')+'K'
 MISSING=[]
+CANON={'surfing_with_grant':'Surf coach','itsmarcofontana':'Fitness coach','koberugless':'Rugby player & coach','jaredto100':'Hybrid-training coach','rhian_marie':'Personal branding coach','the.limitlesscoach':'Entrepreneur / health coach'}
 def meta(handle,f):
     m=f'<span class="hn">@{esc(handle)}</span>'
     if f: m+=f'<span class="pill">{fmtf(f)} followers</span>'
     return f'<div class="meta">{m}</div>'
 def title(name,handle,niche,where=''):
+    if handle in CANON: niche=CANON[handle]
     t=f'<div class="ch"><h3>{esc(name)}</h3>'
     if handle:
         f=FC.get(handle)
@@ -121,7 +123,7 @@ vt={y['id']:y['title'] for y in s['youtube']}
 yt=''
 for vid,name,h,niche,by in YT:
     by=next(y['channel'] for y in s['youtube'] if y['id']==vid)
-    yt+=f'''<article class="card vid">{title(name,h,niche,'video')}
+    yt+=f'''<article class="card vid">{title(name,h,niche or (NICHE.get(h) if h else None),'video')}
 <button class="vframe" data-yt="{vid}" aria-label="Play: {esc(vt[vid])}"><img loading="lazy" src="img/yt/{vid}.jpg" alt="{esc(vt[vid])}"><span class="play"></span></button>
 <p class="vt">{esc(vt[vid])}</p><p class="by">Channel: {esc(by)} · <a href="https://youtu.be/{vid}" target="_blank" rel="noopener">Watch on YouTube ↗</a></p></article>\n'''
 CV=[('Lachie Campbell','777lachy','High-ticket sales','lachie-testimonial'),('Colby Offutt','colby_offutt',NICHE['colby_offutt'],'colby-testimonial')]
