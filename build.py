@@ -144,9 +144,23 @@ for name,h,niche,amt,imgs in cards:
 NFIN=len(cards)
 # follower growth
 import os
+# Self-reported follower milestones from the Wins/DONEWITHYOU WhatsApp chat (no verified IG handle — do not
+# guess one or an English name). Keyed by a non-handle id; value: (card name, followers for sorting, pill,
+# exact message text, image in img/ig/, alt text).
+# 연 서: "Finally hit 10K followers 🚀🚀" shared 8 Nov 2026 7:26 am WITA — the SHARED date is inferred from the
+# "Yesterday" divider seen on a Mon 9 Nov 2026 desktop (WITA); the achievement date itself was not stated,
+# so no date is shown on the card. Embedded IG screenshot in the message shows 1만 (10,000) followers.
+# Self-reported by the client; not independently audited.
+SELFREP={'selfrep:yeonseo':('연 서',10000,'10K followers','Finally hit 10K followers 🚀🚀','yeon-seo-10k-2026-11-08.png','연 서 WhatsApp message in the Done4U Wins chat announcing 10K Instagram followers (self-reported)')}
 fol='';split=False
-order=sorted(FOLL,key=lambda r:(r[1] not in NEWHDR,-r[2]))
+order=sorted(FOLL+[(v[0],k,v[1]) for k,v in SELFREP.items()],key=lambda r:(r[1] not in NEWHDR,-r[2]))
 for name,h,f in order:
+    if h in SELFREP:
+        _,_,pill,quote,im,alt=SELFREP[h]
+        assert os.path.exists(f'img/ig/{im}'),im
+        if not split: fol+='</div><div class="grid flexc" style="margin-top:var(--gap)">'; split=True
+        fol+=f'<article class="card fol"><div class="ch"><h3>{esc(name)}</h3><div class="meta"><span class="pill">{esc(pill)}</span><span class="pill">Self-reported</span></div><p class="niche">“{esc(quote)}”</p></div><div class="frame"><img loading="lazy" src="img/ig/{im}" alt="{esc(alt)}" data-full="img/ig/{im}"></div></article>\n'
+        continue
     cls='hdr' if h in NEWHDR else 'ig'
     assert os.path.exists(f'img/ig/{h}.jpg'),h
     body=f'<div class="frame {cls}"><img loading="lazy" src="img/ig/{h}.jpg" alt="{esc(name)} Instagram profile" data-full="img/ig/{h}.jpg"></div>'
