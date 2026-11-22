@@ -2,7 +2,7 @@ import json,re,html
 T='/workspace/testimonials-v2/'
 s=json.load(open(T+'restructure_spec.json'))
 wins=json.load(open('/tmp/wins_map.json'))
-CAL='https://calendly.com/madeuwatch/strategy-call-clone'
+CAL='https://calendly.com/d/dz8c-dmn-3tr/done4u-team'
 esc=html.escape
 NICHE={ # Jake's list (t1034u); lines marked (inferred) come from the screenshot bio, placeholders are 'Creator'
  'masonjinfu':'Health coach','alexuscazares':'PhD student coach','blueandkim':'Personal branding coach','rhian_marie':'Personal branding coach',
